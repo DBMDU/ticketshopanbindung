@@ -1,20 +1,20 @@
-const serverless = require("serverless-http");
+import serverless from "serverless-http";
+import { Router } from "express";
+import express from "express";
+import { createServer } from "http";
+import { parseString } from "xml2js";
+import https from "https";
+import path from "path";
+import compression from "compression";
 
-const { Router } = require("express");
-const express = require("express");
 const app = express();
-const { Server } = require("http");
-const server = Server(app);
-const path = require("path");
-const compression = require("compression");
+const server = createServer(app);
 
-var parseString = require("xml2js").parseString;
-var https = require("https");
 app.use(express.urlencoded({ extended: false }));
 app.use(compression());
 app.use(express.json());
+
 const router = Router();
-/////////////////////////////// Change URL Below
 
 router.get("/api/xml", async (request, response) => {
     function xmlToJson(url, callback) {
@@ -47,14 +47,13 @@ router.get("/api/xml", async (request, response) => {
     xmlToJson(url, function (err, data) {
         console.log(data.spielplan.vst);
         if (err) {
-            return console.err(err);
+            return console.error(err);
         }
 
         response.json(data.spielplan);
     });
 });
 
-///////////////////////////////
 app.use("/api/", router);
 
 export const handler = serverless(app);
