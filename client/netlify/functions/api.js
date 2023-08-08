@@ -1,20 +1,20 @@
-import serverless from "serverless-http"; // Import the serverless-http package
-import { Router } from "express";
-const express = require("express");
-const app = express();
-const path = require("path");
+import express, { Router } from "express";
+import serverless from "serverless-http";
+// Import the serverless-http package
+
+const api = express();
+const router = Router();
+// const path = require("path");
 const compression = require("compression");
 const parseString = require("xml2js").parseString;
 const https = require("https");
-app.use(express.urlencoded({ extended: false }));
-app.use(compression());
-app.use(express.json());
-
-const router = Router();
+api.use(express.urlencoded({ extended: false }));
+api.use(compression());
+api.use(express.json());
 
 /////////////////////////////// Change URL Below
 
-router.get("/api/xml", async (request, response) => {
+router.get("/xml", async (request, response) => {
     function xmlToJson(url, callback) {
         var req = https.get(url, function (res) {
             var xml = "";
@@ -55,4 +55,5 @@ router.get("/api/xml", async (request, response) => {
 ///////////////////////////////
 
 // Export the handler function
-exports.handler = serverless(app);
+api.use("/api/", router);
+export const handler = serverless(api);

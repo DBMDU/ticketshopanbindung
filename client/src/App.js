@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
-import Ticketfetch from "./ticketentry";
-import TicketfetchKindergarten from "./ticketentry2";
-import TicketfetchTheaterKinder from "./ticketentry3";
-import TicketfetchErwachsene from "./ticketentry4";
-import TicketfetchEventGastspiel from "./ticketentry5";
+import Ticketfetch from "./ticketentry.js";
+import TicketfetchKindergarten from "./ticketentry2.js";
+import TicketfetchTheaterKinder from "./ticketentry3.js";
+import TicketfetchErwachsene from "./ticketentry4.js";
+import TicketfetchEventGastspiel from "./ticketentry5.js";
 
 const App = () => {
     return (

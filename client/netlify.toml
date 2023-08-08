@@ -1,17 +1,14 @@
 [functions]
-  external_node_modules = ["express", "xml2js"]
+  external_node_modules = ["express", "xml2js", "https", "serverless-http", "path", "compression"]
   node_bundler = "esbuild"
+
 
 [[redirects]]
 from = "/api/*"
-to = "http://localhost:8888/.netlify/functions/api/:splat"
+to = "/.netlify/functions/api/:splat"
 status = 200
-force = true
 
 [[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
-
-[build]
-  functions = "functions/api"
