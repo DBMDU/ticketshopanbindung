@@ -238,11 +238,7 @@ const Ticketfetch = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-<<<<<<< HEAD
         fetch("/api/xml") // Replace with your backend API endpoint
-=======
-        fetch("/.netlify/functions/api/xml") // Replace with your backend API endpoint
->>>>>>> parent of aad25e7 (Update ticketentry.js)
             .then((response) => response.json())
             .then((jsonData) => {
                 // console.log(jsonData);
