@@ -16,7 +16,7 @@ app.use(express.json());
 const router = Router();
 /////////////////////////////// Change URL Below
 
-router.get("/api/xml", async (request, response) => {
+app.get("/api/xml", async (request, response) => {
     function xmlToJson(url, callback) {
         var req = https.get(url, function (res) {
             var xml = "";
