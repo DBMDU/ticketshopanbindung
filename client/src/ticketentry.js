@@ -52,21 +52,11 @@ const EntryComponent = ({ entry }) => {
     };
 
     const stnr = stueck[0]?.stnr[0] || "";
-    // console.log(stnr);
-    // const spstnr = spst[0]?.spstnr[0] || "";
     const verkaufStatus = theaweb[0]?.verkauf[0] || "";
 
     const deadline = new Date("2023-07-01"); // Replace with your desired deadline = VERKAUFSSTART
     const currentDate = new Date();
 
-    //     const titleLinkHref =
-    //         new Date() < deadline
-    //             ? "https://freilichtbuehne-freudenberg.de/programm/countdown-spielzeit"
-    //             : theaweb[0]?.verkauf[0] !== "N"
-    //             ? `https://freilichtbuehne-freudenberg-tickets.de/THEAweb2/theaweb.php?modus=&canmobile=&modul=saalplan&skin=&param=${ident}`
-    //             : undefined;
-    // const ident = entry["@attributes"]?.ident;
-    // console.log(entry["$"].ident);
     const ident = entry["$"].ident || "";
 
     const isGenreMatch =

@@ -1,13 +1,12 @@
 import express, { Router } from "express";
 import serverless from "serverless-http";
-// Import the serverless-http package
 
 const api = express();
 const router = Router();
-// const path = require("path");
 const compression = require("compression");
 const parseString = require("xml2js").parseString;
 const https = require("https");
+
 api.use(express.urlencoded({ extended: false }));
 api.use(compression());
 api.use(express.json());
