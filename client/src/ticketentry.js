@@ -238,7 +238,7 @@ const Ticketfetch = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch("/.netlify/functions/api/xml") // Replace with your backend API endpoint
+        fetch("/api/xml") // Replace with your backend API endpoint
             .then((response) => response.json())
             .then((jsonData) => {
                 // console.log(jsonData);
