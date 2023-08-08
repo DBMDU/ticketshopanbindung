@@ -5,6 +5,7 @@
     "repository": "https://github.com/f3n0l/xml-to-component.git",
     "author": "Tolga Simsek <tsi@david-bock.de>",
     "license": "MIT",
+    "type": "module",
     "dependencies": {
         "@netlify/functions": "^1.6.0",
         "@types/express": "^4.17.17",
