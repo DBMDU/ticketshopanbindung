@@ -14,9 +14,9 @@ body {
 
 /* //hide navbar */
 
-/* nav {
-    display: none
-} */
+nav {
+    display: none;
+}
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
