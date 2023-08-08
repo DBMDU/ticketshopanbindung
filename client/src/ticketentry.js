@@ -238,13 +238,17 @@ const Ticketfetch = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch("/.netlify/functions/api/xml") // Replace with your backend API endpoint
-            .then((response) => response.json())
-            .then((jsonData) => {
-                // console.log(jsonData);
-                setData(jsonData.vst);
+        fetch("/api/xml")
+            .then((response) => response.text())
+            .then((text) => {
+                try {
+                    const jsonData = JSON.parse(text);
+                    setData(jsonData.vst);
+                } catch (error) {
+                    console.error("Error parsing JSON:", text);
+                }
             })
-            .catch((error) => console.error("Error:", error));
+            .catch((error) => console.error("Error fetching data:", error));
     }, []);
 
     return (
