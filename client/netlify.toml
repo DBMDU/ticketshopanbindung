@@ -4,9 +4,9 @@
 
 [[redirects]]
 from = "/api/*"
-to = "/.netlify/functions/api/:splat"
+to = "http://localhost:8888/.netlify/functions/:splat"
 status = 200
-force=true
+force = true
 
 [[redirects]]
 from = "/*"

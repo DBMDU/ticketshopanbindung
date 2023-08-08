@@ -2,12 +2,11 @@ import serverless from "serverless-http"; // Import the serverless-http package
 import { Router } from "express";
 const express = require("express");
 const app = express();
-const path = require("path");
-const compression = require("compression");
+
 const parseString = require("xml2js").parseString;
 const https = require("https");
 app.use(express.urlencoded({ extended: false }));
-app.use(compression());
+
 app.use(express.json());
 
 const router = Router();
