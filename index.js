@@ -1,20 +1,20 @@
-const express = require("express");
-const app = express();
-const { Server } = require("http");
-const server = Server(app);
-const path = require("path");
-const compression = require("compression");
+import express from "express";
+import { Server } from "http";
+import serverless from "serverless-http";
+import { parseString } from "xml2js";
+import https from "https";
 
-var parseString = require("xml2js").parseString;
-var https = require("https");
+const app = express();
+const server = Server(app);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(compression());
 app.use(express.json());
 
-/////////////////////////////// Change URL Below
+// Define router
+const router = express.Router();
 
-app.get("/api/xml", async (request, response) => {
+router.get("/xml", async (request, response) => {
     function xmlToJson(url, callback) {
         var req = https.get(url, function (res) {
             var xml = "";
@@ -52,20 +52,7 @@ app.get("/api/xml", async (request, response) => {
     });
 });
 
-///////////////////////////////
+// Use the router
+app.use("/api", router);
 
-app.use(express.static(path.join(__dirname, "build")));
-
-app.get("/", function (req, res) {
-    res.sendFile(path.resolve(__dirname, "build", "index.html"));
-});
-
-app.get("*", function (req, res) {
-    res.sendFile(path.resolve(__dirname, "build", "index.html"));
-});
-
-server.listen(process.env.PORT || 3001, () => {
-    console.log("I'm listening.");
-});
-
-//delete url
+export const handler = serverless(app);
