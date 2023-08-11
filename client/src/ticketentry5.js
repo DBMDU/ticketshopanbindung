@@ -184,6 +184,8 @@ const EntryComponent = ({ entry }) => {
                 </div>{" "}
                 <div className="secondContainer">
                     <a
+                        target="_blank"
+                        rel="noreferrer"
                         className="titelLink"
                         href={
                             new Date() < deadline
