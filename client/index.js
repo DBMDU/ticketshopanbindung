@@ -43,7 +43,7 @@ router.get("/api/xml", async (request, response) => {
 
     // Change ending of url according to the date needed:
     var url =
-        "https://freilichtbuehne-freudenberg-tickets.de/cbn/cbn.php?document=spielplxml&von=01.01.2023&bis=31.12.2023";
+        "https://freilichtbuehne-freudenberg-tickets.de/cbn/cbn.php?document=spielplxml&von=01.01.2022&bis=31.12.2022";
     xmlToJson(url, function (err, data) {
         console.log(data.spielplan.vst);
         if (err) {
