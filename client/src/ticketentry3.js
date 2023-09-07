@@ -60,7 +60,7 @@ const EntryComponent = ({ entry }) => {
 
     //     const titleLinkHref =
     //         new Date() < deadline
-    //             ? "https://freilichtbuehne-freudenberg.de/programm/countdown-spielzeit"
+    //             ? "https://freilichtbuehne-freudenberg.de/tickets/countdown-vorverkauf"
     //             : theaweb[0]?.verkauf[0] !== "N"
     //             ? `https://freilichtbuehne-freudenberg-tickets.de/THEAweb2/theaweb.php?modus=&canmobile=&modul=saalplan&skin=&param=${ident}`
     //             : undefined;
@@ -78,7 +78,7 @@ const EntryComponent = ({ entry }) => {
     const titleLinkHref = isGenreMatch
         ? "https://freilichtbuehne-freudenberg.de/tickets/reservierung/formular-reservierung-kindergarten-schulvorstellungen"
         : new Date() < deadline
-        ? "https://freilichtbuehne-freudenberg.de/programm/countdown-spielzeit"
+        ? "https://freilichtbuehne-freudenberg.de/tickets/countdown-vorverkauf"
         : verkaufStatus !== "N"
         ? `https://freilichtbuehne-freudenberg-tickets.de/THEAweb2/theaweb.php?modus=&canmobile=&modul=saalplan&skin=&param=${ident}`
         : undefined;
@@ -191,7 +191,7 @@ const EntryComponent = ({ entry }) => {
                         className="titelLink"
                         href={
                             new Date() < deadline
-                                ? "https://freilichtbuehne-freudenberg.de/programm/countdown-spielzeit"
+                                ? "https://freilichtbuehne-freudenberg.de/tickets/countdown-vorverkauf"
                                 : verkaufStatus !== "N"
                                 ? genre &&
                                   genre.includes(
