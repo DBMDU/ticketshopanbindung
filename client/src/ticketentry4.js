@@ -72,7 +72,7 @@ const EntryComponent = ({ entry }) => {
         genre && genre.includes("Kindergarten- & Schulvorstellung");
     /////CHANGE GENRE NAME
 
-    if (stnr !== "12") {
+    if (stnr !== "14") {
         return null; // Don't render the component if spstnr is not 1
     }
 
