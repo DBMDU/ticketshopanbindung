@@ -15,9 +15,9 @@ const EntryComponent = ({ entry }) => {
     };
 
     const getButtonBackgroundColor = (stnr) => {
-        if ((stnr === "9") | (stnr === "10")) {
+        if ((stnr === "15") | (stnr === "16")) {
             return "#F49800";
-        } else if (stnr === "1") {
+        } else if (stnr === "14") {
             return "#0E2C51";
         } else {
             return "lightgray";
@@ -72,7 +72,7 @@ const EntryComponent = ({ entry }) => {
         genre && genre.includes("Kindergarten- & Schulvorstellung");
     /////CHANGE GENRE NAME
 
-    if (stnr !== "1") {
+    if (stnr !== "14") {
         return null; // Don't render the component if spstnr is not 1
     }
 

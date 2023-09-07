@@ -18,9 +18,9 @@ const EntryComponent = ({ entry }) => {
     //Farbe Stücknummer
 
     const getButtonBackgroundColor = (stnr) => {
-        if ((stnr === "9") | (stnr === "10")) {
+        if ((stnr === "15") | (stnr === "16")) {
             return "#F49800";
-        } else if (stnr === "1") {
+        } else if (stnr === "14") {
             return "#0E2C51";
         } else {
             return "lightgray";
