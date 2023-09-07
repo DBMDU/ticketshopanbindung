@@ -13,6 +13,8 @@ const EntryComponent = ({ entry }) => {
         padding: "5px",
     };
 
+    //Farbe Stücknummer
+
     const getButtonBackgroundColor = (stnr) => {
         if ((stnr === "15") | (stnr === "16")) {
             return "#F49800";
