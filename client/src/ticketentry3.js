@@ -243,17 +243,25 @@ const Ticketfetch = () => {
         fetch("/api/xml") // Replace with your backend API endpoint
             .then((response) => response.json())
             .then((jsonData) => {
-                // console.log(jsonData);
-                setData(jsonData.vst);
+                // Filter out entries with genre "Kindergarten- & Schulvorstellung"
+                const filteredData = jsonData.vst.filter(
+                    (entry) =>
+                        !entry.genre.includes(
+                            "Kindergarten- & Schulvorstellung"
+                        )
+                );
+
+                setData(filteredData);
             })
             .catch((error) => console.error("Error:", error));
     }, []);
 
     return (
         <div className="mainContainer">
-            {data.map((entry, index) => (
-                <EntryComponent key={index} entry={entry} />
-            ))}
+            {data &&
+                data.map((entry, index) => (
+                    <EntryComponent key={index} entry={entry} />
+                ))}
         </div>
     );
 };
