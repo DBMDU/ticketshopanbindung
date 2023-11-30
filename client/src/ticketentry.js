@@ -56,7 +56,7 @@ const EntryComponent = ({ entry }) => {
     const stnr = stueck[0]?.stnr[0] || "";
     const verkaufStatus = theaweb[0]?.verkauf[0] || "";
 
-    const deadline = new Date("2023-12-01"); // Replace with your desired deadline = VERKAUFSSTART
+    const deadline = new Date("2023-11-30"); // Replace with your desired deadline = VERKAUFSSTART
     const currentDate = new Date();
 
     const ident = entry["$"].ident || "";
