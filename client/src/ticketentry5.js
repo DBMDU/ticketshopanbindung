@@ -15,9 +15,9 @@ const EntryComponent = ({ entry }) => {
     };
 
     const getButtonBackgroundColor = (stnr) => {
-        if ((stnr === "15") | (stnr === "16")) {
+        if ((stnr === "17") | (stnr === "18")) {
             return "#F49800";
-        } else if (stnr === "14") {
+        } else if (stnr === "19") {
             return "#0E2C51";
         } else {
             return "lightgray";
@@ -53,7 +53,7 @@ const EntryComponent = ({ entry }) => {
     const stnr = stueck[0]?.stnr[0] || "";
     const verkaufStatus = theaweb[0]?.verkauf[0] || "";
 
-    const deadline = new Date("2023-11-30"); // Replace with your desired deadline = VERKAUFSSTART
+    const deadline = new Date("2024-11-30"); // Replace with your desired deadline = VERKAUFSSTART
     const currentDate = new Date();
 
     //     const titleLinkHref =
