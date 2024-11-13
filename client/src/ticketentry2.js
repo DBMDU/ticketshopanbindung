@@ -55,7 +55,7 @@ const EntryComponent = ({ entry }) => {
     const stnr = stueck[0]?.stnr[0] || "";
     const verkaufStatus = theaweb[0]?.verkauf[0] || "";
 
-    const deadline = new Date("2024-11-30"); // Replace with your desired deadline = VERKAUFSSTART
+    const deadline = new Date("2024-12-01"); // Replace with your desired deadline = VERKAUFSSTART
     const currentDate = new Date();
 
     //     const titleLinkHref =
@@ -79,7 +79,7 @@ const EntryComponent = ({ entry }) => {
     const titleLinkHref = isGenreMatch
         ? "https://freilichtbuehne-freudenberg.de/tickets/reservierung/formular-reservierung-kindergarten-schulvorstellungen"
         : new Date() < deadline
-        ? "https://freilichtbuehne-freudenberg.de/tickets/countdown-vorverkauf"
+        ? "https://freilichtbuehne-freudenberg.de/tickets/countdown-vorverkauf-kindergarten-schulvorstellungen/"
         : verkaufStatus !== "N"
         ? `https://freilichtbuehne-freudenberg-tickets.de/THEAweb2/theaweb.php?modus=&canmobile=&modul=saalplan&skin=&param=${ident}`
         : undefined;
