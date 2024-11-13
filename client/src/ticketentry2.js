@@ -192,7 +192,7 @@ const EntryComponent = ({ entry }) => {
                         className="titelLink"
                         href={
                             new Date() < deadline
-                                ? "https://freilichtbuehne-freudenberg.de/tickets/countdown-vorverkauf"
+                                ? "https://freilichtbuehne-freudenberg.de/tickets/countdown-vorverkauf-kindergarten-schulvorstellungen/"
                                 : verkaufStatus !== "N"
                                 ? genre &&
                                   genre.includes(
